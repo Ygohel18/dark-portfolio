@@ -1,0 +1,29 @@
+Redirect 301 /instagram https://instagram.com/ygohel18
+Redirect 301 /linkedin https://www.linkedin.com/in/ygohel18/
+Redirect 301 /facebook https://facebook.com/ygohel18
+Redirect 301 /threads https://www.threads.net/@ygohel18
+Redirect 301 /twitter https://twitter.com/ygohel18
+Redirect 301 /github https://github.com/ygohel18
+Redirect 301 /blog https://medium.com/@ygohel18
+Redirect 301 /medium https://medium.com/@ygohel18
+Redirect 301 /dribbble https://dribbble.com/ygohel18
+Redirect 301 /behance https://behance.com/ygohel18
+Redirect 301 /uplabs https://uplabs.com/ygohel18
+Redirect 301 /pinterest https://in.pinterest.com/ygohel18
+Redirect 301 /whatsapp https://wa.me/917698094485
+Redirect 301 /paypal https://paypal.me/ygohel18
+Redirect 301 /hosting https://hostingspell.com
+Redirect 301 /ig https://instagram.com/y._.1801
+
+Redirect 301 /payment https://razorpay.me/@planckstudio
+Redirect 301 /gpay https://yashgohel.com/payment/gpay.png
+Redirect 301 /phonepe https://yashgohel.com/payment/phonepe.png
+
+Redirect 301 /tailwind https://karnavari-tailwind-theme-9876543210.vercel.app/components
+Redirect 301 /card https://vcards.app.planckstudio.in/ygohel18 
+
+AddHandler application/x-httpd-ea-php81 .php .php7 .phtml
+AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+
+RewriteEngine On
+RewriteRule ^posts/(.*)$ https://uplabs.com/posts/$1 [R=301,L]

@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+            
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+            
+            .countdown {
+                display: flex;
+                justify-content: center;
+            }
+            
+            .timer-section {
+                margin: 0 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timer-label {
+                font-size: 18px;
+                margin-top: 5px;
+            }
+            
+            .grid {
+                margin-top: 50px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                gap: 10px;
+            }
+            
+            @media (max-width: 600px) {
+                .grid {
+                    grid-template-columns: 1fr;
+                    gap: 40px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="countdown">
+            <div class="timer grid">
+                <div class="timer-section">
+                    <span class="years">0</span>
+                    <div class="timer-label">Years</div>
+                </div>
+                 <div class="timer-section">
+                    <span class="months">0</span>
+                    <div class="timer-label">Months</div>
+                </div>
+                <div class="timer-section">
+                    <span class="days">0</span>
+                    <div class="timer-label">Days</div>
+                </div>
+                <div class="timer-section">
+                    <span class="hours">0</span>
+                    <div class="timer-label">Hours</div>
+                </div>
+                <div class="timer-section">
+                    <span class="minutes">0</span>
+                    <div class="timer-label">Minutes</div>
+                </div>
+                <div class="timer-section">
+                    <span class="seconds">0</span>
+                    <div class="timer-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+        <h3 id="greet">Until Next Time 💫</h3>
+        <script>
+            const startDate = new Date("January 16, 2022 19:35:00").getTime();
+    
+            const x = setInterval(function() {
+                const now = new Date().getTime();
+                const elapsedTime = now - startDate;
+            
+                const years = Math.floor(elapsedTime / (1000 * 60 * 60 * 24 * 365));
+                const months = Math.floor((elapsedTime % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30));
+                const days = Math.floor((elapsedTime % (1000 * 60 * 60 * 24 * 30)) / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+                document.querySelector(".years").innerHTML = years;
+                document.querySelector(".months").innerHTML = months;
+                document.querySelector(".days").innerHTML = days;
+                document.querySelector(".hours").innerHTML = hours;
+                document.querySelector(".minutes").innerHTML = minutes;
+                document.querySelector(".seconds").innerHTML = seconds;
+            
+            }, 1000);  
+            
+            const targetDate = new Date("March 16, 2024").setHours(0, 0, 0, 0);
+
+            function updateCelebration() {
+                const currentDate = new Date().setHours(0, 0, 0, 0);
+                const greetingElement = document.getElementById("greet");
+            
+                if (currentDate === targetDate) {
+                    greetingElement.textContent = "Happiest Birthday! 🎉🥳";
+                }
+            }
+            
+            updateCelebration();
+        </script>
+        
+        
+    </body>
+</html>
